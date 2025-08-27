@@ -9,10 +9,10 @@ Pod::Spec.new do |s|
   s.source                  = { :git => 'https://github.com/Ruoyu05/PaddleLite.git', :tag => s.version.to_s }
   s.license                 = { :type => 'MIT', :file => 'LICENSE' }
 
-  s.ios.vendored_libraries  = 'lib/libpaddle_light_api_shared.a'
-  s.public_header_files     = 'include/**/*.h'
+  s.public_header_files     = 'PaddleLite/include/**/*.h', 'PaddleLite/PaddleLiteWrapper.h'
+  s.source_files            = 'PaddleLite/PaddleApi.swift', 'PaddleLite/PaddleLiteWrapper.*', 'PaddleLite/include/**/*'
+  s.ios.vendored_libraries  = 'PaddleLite/lib/libpaddle_api_light_bundled.a'
 
-  s.platform                = :ios, '18.0'
   s.ios.deployment_target   = '18.0'
   s.library                 = 'c++'
   s.static_framework        = true
